@@ -1,11 +1,13 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="/">Е-општини</b-navbar-brand>
+    <b-navbar-brand href="/">Отворени податоци</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item to="/municipalities/blog/list-all">Објави на општините</b-nav-item>
+        <b-nav-item to="/municipalities/blog/list-all"
+          >Објави на општините</b-nav-item
+        >
       </b-navbar-nav>
       <b-navbar-nav> </b-navbar-nav>
 
