@@ -30,7 +30,8 @@
             Договори и рамковни спогодби за јавни набавки за стоки
           </h3>
           <h5 class="text-center mt-3">Потрошени пари по месеци</h5>
-          <area-chart
+
+          <chart
             :data="{
               јануари: stokiMesec.jan,
               февруари: stokiMesec.feb,
@@ -45,7 +46,7 @@
               ноември: stokiMesec.noe,
               декември: stokiMesec.dec,
             }"
-          ></area-chart>
+          />
         </b-col>
         <b-col>
           <h3 class="text-center">
