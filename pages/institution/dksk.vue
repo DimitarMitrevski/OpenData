@@ -15,6 +15,8 @@
             <column-chart :data="poMesec" :download="true"></column-chart>
             <h3 class="mt-4">Видови на договор</h3>
             <column-chart :data="poVid" :download="true"></column-chart>
+            <h3 class="mt-4">Збир на наплати по месец (ден)</h3>
+            <area-chart class="mb-4" :data="mesecPay" :download="true"></area-chart>
         </b-container>
     </div>
 </template>
@@ -25,12 +27,14 @@ export default {
     data(){
         return{
             poMesec: [],
-            poVid: []
+            poVid: [],
+            mesecPay: []
         }
     },
     created(){
         this.getData('pochetokMesec', 'poMesec');
         this.getData('vidNaDogovor', 'poVid');
+        this.getMeseciPay();
     },
     methods: {
         getData(val, plc){
@@ -44,7 +48,20 @@ export default {
             let arrSec = Object.entries(myArr);
             arrSec.sort((a, b) => b[1] - a[1]);
             this[`${plc}`] = arrSec;
-        }
+        },
+        getMeseciPay(){
+            let myArr = {};
+            for(var i = 0; i < Sheet1.length; i++){
+                if(Sheet1[i].pochetokMesec && Sheet1[i].procenetaVrednost){
+                    let vred = parseFloat(Sheet1[i].procenetaVrednost.split(',').join(''));
+                    if(myArr[Sheet1[i].pochetokMesec]) myArr[Sheet1[i].pochetokMesec] += vred;
+                    else myArr[Sheet1[i].pochetokMesec] = vred;
+                }
+            }
+            let arrSec = Object.entries(myArr);
+            arrSec.sort((a, b) => b[1] - a[1]);
+            this.mesecPay = arrSec;
+        },
     }
 }
 </script>
