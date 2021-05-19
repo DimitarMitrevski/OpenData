@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ data }}</p>
+    <small>{{ data }}</small>
   </div>
 </template>
 
