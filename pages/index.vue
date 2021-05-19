@@ -9,7 +9,13 @@
         <b-form-input placeholder="Пребарувај општини и сетови"></b-form-input>
       </b-input-group>
       <b-row>
-        <b-col v-for="javni in javni" :key="javni.id" cols="4">
+        <b-col
+          class="mb-5"
+          v-for="javni in javni"
+          :key="javni.id"
+          sm="12"
+          lg="4"
+        >
           <b-card
             :title="javni.imeNabav"
             :img-src="javni.slika"
@@ -17,7 +23,7 @@
             img-top
             no-body
             tag="article"
-            class="mb-2 mt-2 h-100 d-flex align-items-center"
+            class="mb-2 mt-2 p-2 h-100 d-flex align-items-center"
             ><b-container class="h-100">
               <b-row align-v="center" class="h-100">
                 <b-col cols="12">
@@ -74,4 +80,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+@media only screen and (max-width: 450px) {
+  .container {
+    padding: 20px;
+  }
+}
+</style>
