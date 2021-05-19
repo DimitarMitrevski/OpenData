@@ -11,12 +11,13 @@
             </b-container>
         </b-jumbotron>
         <b-container id="statistic">
-            <h3 class="mt-4">Број на набавки по месец</h3>
+            <h3 class="mt-4">Број на набавки по месец (вкупно: {{getSum(poMesec)}})</h3>
             <column-chart :data="poMesec" :download="true"></column-chart>
-            <h3 class="mt-4">Видови на договор</h3>
+            <h3 class="mt-4">Видови на договор (бр. на договори: {{getSum(poMesec)}})</h3>
             <column-chart :data="poVid" :download="true"></column-chart>
             <h3 class="mt-4">Збир на наплати по месец (ден)</h3>
-            <area-chart class="mb-4" :data="mesecPay" :download="true"></area-chart>
+            <area-chart :data="mesecPay" :download="true"></area-chart>
+            <h5 class="mt-2 mb-4 text-secondary">Вкупен износ на наплати: {{getSum(mesecPay).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}} денари.</h5>
         </b-container>
     </div>
 </template>
@@ -62,6 +63,11 @@ export default {
             arrSec.sort((a, b) => b[1] - a[1]);
             this.mesecPay = arrSec;
         },
+        getSum(arr){
+            let sum = 0;
+            for(var i = 0; i < arr.length; i++) sum += arr[i][1];
+            return sum;        
+        }
     }
 }
 </script>
