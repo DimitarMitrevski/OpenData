@@ -9,7 +9,9 @@
           >Објави на општините</b-nav-item
         >
       </b-navbar-nav>
-      <b-navbar-nav> </b-navbar-nav>
+      <b-navbar-nav>
+        <b-nav-item to="/municipalities">Сите општините</b-nav-item>
+      </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
