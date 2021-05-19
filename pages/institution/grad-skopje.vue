@@ -53,7 +53,7 @@
             Договори и рамковни спогодби за јавни набавки за услуги
           </h3>
           <h5 class="text-center mt-3">Потрошени пари по месеци</h5>
-          <area-chart
+          <chart
             :data="{
               јануари: uslugiMesec.jan,
               февруари: uslugiMesec.feb,
@@ -68,7 +68,7 @@
               ноември: uslugiMesec.noe,
               декември: uslugiMesec.dec,
             }"
-          ></area-chart>
+          />
         </b-col>
       </b-row>
       <b-row>
@@ -77,7 +77,7 @@
             Договори и рамковни спогодби за јавни набавки за работи
           </h3>
           <h5 class="text-center mt-3">Потрошени пари по месеци</h5>
-          <area-chart
+          <chart
             :data="{
               јануари: rabotiMesec.jan,
               февруари: rabotiMesec.feb,
@@ -92,12 +92,12 @@
               ноември: rabotiMesec.noe,
               декември: rabotiMesec.dec,
             }"
-          ></area-chart>
+          />
         </b-col>
         <b-col>
           <h3 class="text-center">Град скопје потрошени пари во 2021</h3>
           <h5 class="text-center mt-3">Вкупно потрошени пари по месеци</h5>
-          <column-chart
+          <chart
             :data="[
               ['јануари', poMesec.jan],
               ['февруари', poMesec.feb],
@@ -112,7 +112,7 @@
               ['ноември', poMesec.noe],
               ['декември', poMesec.dec],
             ]"
-          ></column-chart>
+          />
         </b-col>
       </b-row>
     </b-container>

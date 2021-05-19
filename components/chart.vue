@@ -6,31 +6,37 @@
       :options="options"
     ></b-form-select>
     <div class="mt-3">
-      <line-chart
-        v-if="selected == 'a'"
-        :data="data"
-        :download="true"
-      ></line-chart>
-      <area-chart
-        v-if="selected == 'b'"
-        :data="data"
-        :download="true"
-      ></area-chart>
-      <pie-chart
-        v-if="selected == 'c'"
-        :data="data"
-        :download="true"
-      ></pie-chart>
-      <bar-chart
-        v-if="selected == 'd'"
-        :data="data"
-        :download="true"
-      ></bar-chart>
-      <column-chart
-        v-if="selected == 'e'"
-        :data="data"
-        :download="true"
-      ></column-chart>
+      <transition name="component-fade" mode="out-in">
+        <line-chart
+          v-if="selected == 'a'"
+          :data="data"
+          :download="true"
+        ></line-chart>
+
+        <area-chart
+          v-if="selected == 'b'"
+          :data="data"
+          :download="true"
+        ></area-chart>
+
+        ><pie-chart
+          v-if="selected == 'c'"
+          :data="data"
+          :download="true"
+        ></pie-chart>
+
+        <bar-chart
+          v-if="selected == 'd'"
+          :data="data"
+          :download="true"
+        ></bar-chart>
+
+        <column-chart
+          v-if="selected == 'e'"
+          :data="data"
+          :download="true"
+        ></column-chart
+      ></transition>
     </div>
   </div>
 </template>
@@ -44,6 +50,7 @@ export default {
   },
   data() {
     return {
+      seen: false,
       selected: 'b',
       options: [
         { value: null, text: 'Одберете вид на графикон' },
@@ -58,4 +65,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
