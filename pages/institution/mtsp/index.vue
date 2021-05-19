@@ -5,7 +5,7 @@
                 <img src="/files/mn_logo.png" style="width: 300px" alt="" class="mb-3">
                 <div style="max-width: 70%" class="h-100 d-flex justify-content-center flex-column text-center">
                     <h2 class="mb-4">Податочни сетови за Министерство за труд и социјална политика</h2>
-                    <b-button variant="info" style="max-width: 250px" to="/files/mn_2021.pdf" target="_blank"><b-icon icon="info-circle"></b-icon> Прегледај вебстрана</b-button>
+                    <b-button variant="info" style="max-width: 250px" href="https://www.mtsp.gov.mk/" target="_blank"><b-icon icon="info-circle"></b-icon> Прегледај вебстрана</b-button>
                     <b-button variant="dark" style="max-width: 230px" class="mt-2" href="#statistic">Прегледај статистика</b-button>
                 </div>
             </b-container>
