@@ -62,6 +62,12 @@ export default {
       ],
     }
   },
+  created() {
+    if (process.client) {
+      const randomArr = ['a', 'b', 'c', 'd', 'e']
+      this.selected = randomArr[Math.floor(Math.random() * randomArr.length)]
+    }
+  },
 }
 </script>
 
