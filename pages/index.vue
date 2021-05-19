@@ -1,7 +1,13 @@
 <template>
   <div>
     <b-container>
-      <h1 class="text-center">Јавни набавки</h1>
+      <h1 class="text-center">Организации</h1>
+      <b-input-group class="mb-3" append="Пребарај">
+        <b-input-group-prepend is-text>
+          <span><b-icon icon="search" /></span>
+        </b-input-group-prepend>
+        <b-form-input placeholder="Пребарувај општини и сетови"></b-form-input>
+      </b-input-group>
       <b-row>
         <b-col v-for="javni in javni" :key="javni.id" cols="4">
           <b-card
